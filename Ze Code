@@ -1,0 +1,154 @@
+Yoda = "C:/Users/nathan_escobar/Documents/Audacity/Try_Yoda.mp3"
+Vocals = "C:/Users/nathan_escobar/Documents/Audacity/Duel of the Fates (Edit)_Vocal 2.mp3"
+Song = "C:/Users/nathan_escobar/Downloads/Duel of the Fates (Edit)_Instrumental.mp3"
+
+define :harp do |n1, n2, a1, r1, c1, s1|
+  play n1, attack: a1, release: r1, cutoff: c1
+  play n2, attack: a1, release: r1, cutoff: c1
+  sleep s1
+end
+
+x = [:g3, :a3, :g3, :fs3, :e3]
+s = [0.5, 0.5, 0.25, 0.25, 0.5]
+i = 0
+a = 1
+
+
+sample Yoda, amp: 7
+sleep 9.5
+sample Vocals, amp: 5
+
+sleep 15.25
+
+live_loop :back do
+  use_bpm 160
+  use_synth :piano
+  140.times do
+    5.times do
+      play x[i]
+      sleep s[i]
+      i = i + 1
+    end
+    i = 0
+  end
+  6.times do
+    5.times do
+      play x[i], amp: a
+      sleep s[i]
+      i = i + 1
+    end
+    i = 0
+    a = a + 1
+  end
+  stop
+end
+
+use_bpm 82
+sleep 12.5
+
+use_synth :blade
+
+2.times do
+  :r
+  harp :e3, :e4, 0.5, 1, 80, 0.25
+  harp :fs4, :fs3, 0.5, 1, 80, 0.25
+  harp :g4, :g3, 0.5, 1, 80, 0.5
+  harp :a4, :a3, 0.5, 1, 80, 0.5
+  harp :b3, :b2, 0.5, 1, 80, 0.5
+  harp :a4, :a3, 0.5, 1, 80, 0.5
+  harp :g4, :g3, 0.5, 1, 80, 0.25
+  harp :fs4, :fs3, 0.5, 1, 80, 0.25
+  harp :e4, :e3, 0.5, 1, 80, 1
+  :r
+end
+:r
+harp :ds3,:ds4, 0.5, 1, 80, 0.25
+harp :e3, :e4, 0.5, 1, 80, 0.25
+harp :fs4, :fs3, 0.5, 1, 80, 0.5
+harp :g4, :g3, 0.5, 1, 80, 0.5
+harp :a2, :a3, 0.5, 1, 80, 0.5
+harp :b3, :b4, 0.5, 1, 80, 0.5
+harp :a4, :a3, 0.5, 1, 80, 0.25
+harp :g4, :g3, 0.5, 1, 80, 0.25
+harp :fs4, :fs3, 0.5, 1, 80, 1
+:r
+
+:r
+harp :ds4, :ds3, 0.5, 1, 80, 0.25
+harp :e4, :e3, 0.5, 1, 80, 0.25
+harp :fs3, :fs4, 0.5, 1, 80, 0.5
+harp :g4, :g3, 0.5, 1, 80, 0.5
+harp :a3, :a2, 0.5, 1, 80, 0.5
+harp :g4, :g3, 0.5, 1, 80, 0.5
+harp :fs4, :fs3, 0.5, 1, 80, 0.25
+harp :e3, :e4, 0.5, 1, 80, 0.25
+harp :ds4, :ds3, 0.5, 5, 80, 1
+:r
+
+sleep 12.5
+
+2.times do
+  
+  :r
+  harp  :e3, :e4, 0.5, 1, 90, 0.25
+  harp  :fs4, :fs3, 0.5, 1, 90, 0.25
+  harp  :g4,  :g3, 0.5, 1, 90, 0.5
+  harp  :a4, :a3, 0.5, 1, 90, 0.5
+  harp  :b3, :b2, 0.5, 1, 90, 0.5
+  harp  :a4, :a3, 0.5, 1, 90, 0.5
+  harp  :g4, :g3, 0.5, 1, 90, 0.25
+  harp  :fs4, :fs3, 0.5, 1, 90, 0.25
+  harp  :e4, :e3, 0.5, 1, 90, 1
+  :r
+end
+
+:r
+harp :ds3, :ds4, 0.5, 1, 90, 0.25
+harp :e3, :e4, 0.5, 1, 90, 0.25
+harp :fs4, :fs3, 0.5, 1, 90, 0.5
+harp :g4, :g3, 0.5, 1, 90, 0.5
+harp :a2, :a3, 0.5, 1, 90, 0.5
+harp :b3, :b4, 0.5, 1, 90, 0.5
+harp :a4, :a3, 0.5, 1, 90, 0.25
+harp :g4, :g3, 0.5, 1, 90, 0.25
+harp :fs4, :fs3, 0.5, 1, 90, 1
+:r
+
+:r
+harp :ds4, :ds3, 0.5, 1, 90, 0.25
+harp :e4, :e3, 0.5, 1, 90, 0.25
+harp :fs3, :fs4, 0.5, 1, 90, 0.5
+harp :g4, :g3, 0.5, 1, 90, 0.5
+harp :a3, :a2, 0.5, 1, 90, 0.5
+harp :g4, :g3, 0.5, 1, 90, 0.5
+harp :fs4, :fs3, 0.5, 1, 90, 0.25
+harp :e3, :e4, 0.5, 1, 90, 0.25
+harp :ds4, :ds3, 0.5, 3, 90, 1
+:r
+
+
+sleep 11.5
+79.times do
+  use_bpm 160
+  use_synth :blade
+  
+  attack_time = 0.1
+  release_time = 0.5
+  modulation_index = 1.5
+  
+  
+  with_fx :lpf, cutoff: 80 do
+    with_synth_defaults attack: attack_time, release: release_time do
+      play :g3, mod_range: modulation_index, mod_phase: 0.25, attack: 0.2, amp: 0.7
+      sleep 0.5
+      play :a3, mod_range: modulation_index, mod_phase: 0.25, attack: 0.2
+      sleep 0.5
+      play :g3, mod_range: modulation_index, mod_phase: 0.25, attack: 0.2
+      sleep 0.25
+      play :fs3, mod_range: modulation_index, mod_phase: 0.25, attack: 0.2, amp: 1.5
+      sleep 0.25
+      play :e3, mod_range: modulation_index, mod_phase: 0.25, attack: 0.2, amp: 1.5
+      sleep 0.5
+    end
+  end
+end
